@@ -1,0 +1,25 @@
+# Telemetry data — never commit raw logs
+logger/data/
+*.csv
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Secrets — tokens live in the Secure Vault / env, never in git
+.env
+*.env
+*secret*
+*token*
+credentials.json
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Node (if any tooling lands here later)
+node_modules/
