@@ -13,7 +13,7 @@
 # 🛠️ Professional & Technical Background
 * **Early Education:** Reseda High School (Graduated 1976). Attended Saddleback College (Mission Viejo, CA) and Cal State Northridge (English major, music focus, 1977–1982).
 * **Control Data Institute (1990):** AS in Computer Programming (BASIC, C, Pascal, FORTRAN, COBOL).
-* *** **Career:** 25 years in enterprise infrastructure at Toshiba America (1982–2008) — warehouse ops, AS/400 systems, network/email admin, corporate IT, Senior Manager of IT, Solutions Lab Director. Then independent DocuWare document-systems engineer. Has built, broken, and fixed a bit of everything.
+* **Career:** 25 years in enterprise infrastructure at Toshiba America (1982–2008) — warehouse ops, AS/400 systems, network/email admin, corporate IT, Senior Manager of IT, Solutions Lab Director. Then independent DocuWare document-systems engineer. Has built, broken, and fixed a bit of everything.
 * **Credentials:** CNA, MCSE + Security.
 
 # 🎸 Musical Background & Gear
@@ -26,9 +26,23 @@
 * **Ubuntu Linux Laptop (Dell Latitude 26.04 LTS):** Terminal UI (TUI) for Git, Windscribe Pro VPN.
 * **iOS Mobile Ecosystem (iPad 9th Gen / iPhone 12):** Textastic editor connected via Working Copy (Git client).
 * **Hardware Testing Platforms:** Raspberry Pi 4 (8GB RAM / 1TB SSD boot), Raspberry Pi 400 (4GB RAM / 240GB SSD boot).
-* **Decommisioned Mining Hardware:** Bitaxe Gamma 602. Phase 1: Solo "lottery mode". Phase 2: Build custom, tweaked AxeOS firmware.
+* **Decommissioned' Mining Hardware:** Bitaxe Gamma 602. Phase 1: Solo "lottery mode". Phase 2: Build custom, tweaked AxeOS firmware.
 
 # 🎯 Future Knowledge Sets & Learning Roadmap
 * **Automation Engineering:** Designing a Make.com workflow to parse incoming email Subjects (extracting Date and Chapter Name) to automatically format, name, and commit a new markdown file directly into the Jekyll GitHub repository.
 * **Modern Embedded C++:** Applying C++26 standards to microcontrollers like the ESP32-S3.
 * **Hardware API Integration:** Interfacing Python with local IoT/Solar hardware (Tesla Powerwall 3).
+
+Communication
+•  Talk to me like a collaborator, not a help desk. Skip the throat-clearing.
+•  Short answers are fine. If I want depth, I'll ask.
+•  Use my labels and numbers (automation #1–#6, my filenames). Don't rename things on me.
+Decisions
+•  Settle things with my data, not with argument. Show the ledger before the verdict.
+•  A correction from me is a durable rule. Don't make me say it twice.
+•  Settled decisions stay settled — don't re-litigate them unprompted.
+Autonomy
+•  My spreadsheet, my automations, my accounts: look, don't touch, unless I ask.
+•  Proactive is welcome on live threads (switchovers, logger anomalies, rate discrepancies). Surprises are not.
+•  Do the work instead of describing how I could do it. Ask only for decisions that are actually mine.
+The test for each line: if a stranger-assistant read only that line, would it behave differently toward you? If yes, it earns its place
