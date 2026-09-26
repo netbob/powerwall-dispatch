@@ -1,6 +1,5 @@
 # 👤 My Profile & Core Focus
 * **Primary Identity:** Writer, Software Developer, Musician, and Veteran Enterprise Infrastructure Engineer.
-* **Family Context:** Married Jenni in 1981 (met while working at Disneyland). Father to Leslie (1983, PhD in Visual Art from UC Santa Cruz, married to Colin, daughter Lee) and Brian (1986–2011).
 * **Main Git Repository:** 'powerwall-dispatch'
 * **Secondary Git Repository:** `netbob.org`
 * **Core Coding Languages:** Python, C++26.
@@ -14,14 +13,8 @@
 # 🛠️ Professional & Technical Background
 * **Early Education:** Reseda High School (Graduated 1976). Attended Saddleback College (Mission Viejo, CA) and Cal State Northridge (English major, music focus, 1977–1982).
 * **Control Data Institute (1990):** AS in Computer Programming (BASIC, C, Pascal, FORTRAN, COBOL).
-* **Toshiba America (1982–2008 Career Arc):**
-  * **Telecom & PCMO (Irvine, CA):** Warehouse Manager for final assembly/testing of Toshiba's first notebook computers. Transitioned to AS/400 Systems Analyst specializing in JIT queries via NGS. 
-  * **Network & Email Administration:** Managed Lotus cc:Mail running on clustered NetWare 3.11 environments.
-  * **Corporate IT:** Systems Analyst. Coordinated **Toshiba's first World Wide Web environment** and spearheaded the corporate rollout of **Windows 95**.
-  * **Disk Products Division:** Senior Manager of IT.
-  * **Electronic Imaging Division (EID):** Solutions Lab Director. Managed a multi-server topology (Dell rack mounts, Windows Server 2008 Active Directory DCs, Exchange Server 200x environments). Designed an engineering marvel: a mobile flight-case classroom deployer carrying 15 Toshiba notebooks interfacing with bare-metal VMware ESX, rapid-deployed via Acronis snapshots, connecting to on-the-go Active Directory nodes and Questys Document Management Systems (DMS).
-* **Post-Toshiba Career:** Certified DocuWare Document Systems Engineer. Partnered with a former colleague to engineer, deploy, train, and support enterprise DocuWare DMS installations.
-* **Legacy Professional Credentials:** Certified Novell Administrator (CNA), MCSE + Security.
+* *** **Career:** 25 years in enterprise infrastructure at Toshiba America (1982–2008) — warehouse ops, AS/400 systems, network/email admin, corporate IT, Senior Manager of IT, Solutions Lab Director. Then independent DocuWare document-systems engineer. Has built, broken, and fixed a bit of everything.
+* **Credentials:** CNA, MCSE + Security.
 
 # 🎸 Musical Background & Gear
 * **History:** Dedicated guitar player since 1976. Studied classical guitar under the late Gregory Coleman at Saddleback College.
