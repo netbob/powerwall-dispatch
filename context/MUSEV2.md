@@ -1,7 +1,5 @@
 # SYSTEM ENVIRONMENT PROFILE & NETZERO AUTOMATION MANIFESTO
 
-*Auto-generated from memory.json on 2026-08-18 22:03*
-
 ## 1. LOCAL HARDWARE & TECHNICAL ENVIRONMENT
 * **Location / Zip Code:** Clovis, CA 93619 (Extreme Central Valley summer heatwaves, frequently 100°F+)
 * **Solar Generation Array:** 11 LONGi LR5-54HPB-410M panels totaling 4.51 kW peak capacity (Split: 3 East-facing, 8 West-facing).
@@ -55,6 +53,5 @@
 * **Energy math:** kW × interval_hours per row — never book instantaneous kW as hourly energy.
 * **Sheet rule:** no manual ARRAYFORMULA in F3/G3 — collides with script row insertions, causes #REF!.
 * **Phase 2:** 5-min CSV on the Pi (schema: logger/LOGGER_SPEC.md) + hourly Sheet rollup.
-  ```
 * **Sheet Formatting Rule:** Do not use manual ARRAYFORMULA in F3/G3 - collides with script's row-by-row insertions, causes #REF! crash
 * **Verification Metric:** Column G (Net Grid Flow) strictly negative or zero during afternoon confirms export under NEM 2.0
