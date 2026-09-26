@@ -8,12 +8,10 @@
 * **Storage Solution:** 1x Tesla Powerwall 3 (13.5 kWh capacity, 11.5 kW inverter [Model: 1707000-XX-Y], 1841000-XX-Y (Gateway 3)).
 * **Climate Control Hardware:** Honeywell Smart Thermostats, upstairs and downstairs zones + Electric heat pump.
 * **Domestic Hot Water Hardware:** High-efficiency hybrid electric heat pump water heater.
-* **Edge Infrastructure:** Windows 11 Pro, GitHub Desktop, Google Apps Script.
-* **Decommissioned Hardware:** Bitaxe Gamma 602 ASIC miner, Raspberry Pi 400 Stratum pool server.
 
 ## 2. INTERCONNECTION & REGULATORY STATUS (NEM 2.0 LEGACY)
 * **PTO Date:** 2026-02-24
-* **Annual True-Up Target:** 02-24 (First settlement: 2027-02-24)
+* **Annual True-Up Target:** 01-2027
 * **Tariff Structure:** NEM 2.0 (grandfathered, verified with PG&E Solar Dept)
 * **Credit Valuation Rule:** 1-to-1 retail net export credit, not subject to NEM 3.0
 * **Retroactive Protection Cash Cushion:** $182.13 (March-July 2026 post-PTO overpayments)
@@ -42,22 +40,21 @@
 * **Summer (Jun 1–Sep 30), below baseline:** Peak $0.40 / Off-peak $0.32. Peak window 4–9 PM daily.
 * **Winter (Oct 1–May 31), below baseline:** Peak $0.37 / Off-peak $0.29 (verify against tariff — PDF suggests 32¢ peak).
 
-## 6. NETZERO APP AUTOMATION TIMELINE
-1. **Rule 1 - Morning Shift (9:00 AM):**
-   * *Settings:* Mode: `Self-Powered` | Backup Reserve: `40%`
-   * *Objective:* Battery smooths daytime 77°F A/C spikes exceeding solar generation, drawing zero or low-cost ($0.23) off-peak grid power
-3. **Rule 3 - Peak Discharge (4:00 PM):**
-   * *Settings:* Mode: `Self-Powered` | Backup Reserve: `10%`
-   * *Objective:* Battery carries full household load and exports aggressively at premium $0.40 peak price
-4. **Rule 4 - Overnight Run (9:00 PM):**
-   * *Settings:* Mode: `Savings` | Backup Reserve: `20%`
-   * *Objective:* Late-night cushion; carries load through $0.43 part-peak hour if A/C runs to 10 PM, then drops to cover dark-house baseline overnight
+## 6. NETZERO AUTOMATION INVENTORY (reworked 2026-09-24)
+* **#1 Morning Shift (9 AM, active):** 20% reserve, Self-Powered, solar-only exports, grid charging off.
+* **#2 Mid-peak Guard (3 PM, paused → unpause Oct 1):** 100% reserve, Self-Powered, solar-only, grid charging off.
+* **#3 Peak Self-Power (4 PM, active):** 10% reserve, Self-Powered, solar-only, grid charging off. (Export burst retired.)
+* **#4 Overnight Run (9 PM, active):** 20% reserve, Self-Powered, solar-only, grid charging off.
+* **#5 Winter Grid Top-Off (midnight, paused → unpause Oct 1):** 100% reserve, Savings, grid charging on when est. daily solar < 10 kWh.
+* **#6 Winter Reset (6 AM, paused → unpause Oct 1):** 40% reserve, Savings, solar-only, grid charging off when est. daily solar < 10 kWh.
+* **Strategy:** avoid grid imports; no export monetization (retired — nets ~$0 under NEM 2.0, adds cycle wear).
 
-## 7. REVENUE LOGGING & TELEMETRY TRACKING
-* **Tool:** Google Apps Script + Google Sheets
-* **Active Cost Formula:**
-  ```javascript
-  =IF(AND(HOUR(A{row})>=16, HOUR(A{row})<21), 0.54, IF(OR(HOUR(A{row})=15, HOUR(A{row})>=21), 0.43, 0.23))
+## 7. REVENUE LOGGING & TELEMETRY
+* **Tool:** Google Apps Script + Google Sheets (logger v5.51, hourly).
+* **Rates:** E-TOU-C below-baseline (summer 0.40/0.32; winter 0.37/0.29). Old rows may carry stale rate literals.
+* **Energy math:** kW × interval_hours per row — never book instantaneous kW as hourly energy.
+* **Sheet rule:** no manual ARRAYFORMULA in F3/G3 — collides with script row insertions, causes #REF!.
+* **Phase 2:** 5-min CSV on the Pi (schema: logger/LOGGER_SPEC.md) + hourly Sheet rollup.
   ```
 * **Sheet Formatting Rule:** Do not use manual ARRAYFORMULA in F3/G3 - collides with script's row-by-row insertions, causes #REF! crash
 * **Verification Metric:** Column G (Net Grid Flow) strictly negative or zero during afternoon confirms export under NEM 2.0
