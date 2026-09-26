@@ -10,6 +10,10 @@
 * **Current Manuscript:** Untitled novel exploring an AI that develops genuine consciousness.
 * **Web Architecture:** Automated pipeline using a Jekyll Static Site Generator (Chirpy Theme). Push markdown to GitHub ➡️ Triggers Cloudflare Pages rebuild ➡️ Deploys to `netbob.org`.
 
+# ⚡ Current Focus
+* Main project: programmatic dispatch layer for my Tesla Powerwall 3 — see repo README.
+* North star: avoiding import *from* the grid beats monetizing exports. Every recommendation should serve that.
+
 # 🛠️ Professional & Technical Background
 * **Early Education:** Reseda High School (Graduated 1976). Attended Saddleback College (Mission Viejo, CA) and Cal State Northridge (English major, music focus, 1977–1982).
 * **Control Data Institute (1990):** AS in Computer Programming (BASIC, C, Pascal, FORTRAN, COBOL).
