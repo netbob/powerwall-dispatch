@@ -5,6 +5,13 @@
 * **Core Coding Languages:** Python, C++26.
 * **Specialized Interests:** Tesla Powerwall 3 automation, Custom open-source
 
+# 🏠 Home & Comfort
+* **Daytime Temperature Rule:** 77°F during the day. Upstairs and downstairs.
+* **Nighttime Rule:** A/C off at night.
+* **Thermostat Control Style:** manual only, not automated.
+* **Thermal Schedule:** On 8:30-9:00 AM (timed so solar is active for compressor startup surge); off 9:00 PM (extended to 10:00 PM on extreme heat nights).
+* **ELIMINATED STRATEGY:** Daytime pre-cooling to 70°F - causes headaches, permanently rejected, do not suggest
+
 # 📚 Writing & Creative Portfolio
 * **Published Work:** Short story titled "Psychopath" (Published ~2025).
 * **Current Manuscript:** Untitled novel exploring an AI that develops genuine consciousness.
