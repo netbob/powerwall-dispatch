@@ -14,8 +14,6 @@
 ## 2. INTERCONNECTION & REGULATORY STATUS (NEM 2.0 LEGACY)
 * **PTO Date:** 2026-02-24
 * **Annual True-Up Target:** 02-24 (First settlement: 2027-02-24)
-* **Account Number:** \*\*\*REDACTED\*\*\*
-* **Interconnection Reference Number:** \*\*\*REDACTED\*\*\*
 * **Tariff Structure:** NEM 2.0 (grandfathered, verified with PG&E Solar Dept)
 * **Credit Valuation Rule:** 1-to-1 retail net export credit, not subject to NEM 3.0
 * **Retroactive Protection Cash Cushion:** $182.13 (March-July 2026 post-PTO overpayments)
@@ -38,12 +36,11 @@
 * **Thermal Schedule:** On 8:30-9:00 AM (timed so solar is active for compressor startup surge); off 9:00 PM (extended to 10:00 PM on extreme heat nights).
 * **ELIMINATED STRATEGY:** Daytime pre-cooling to 70°F - causes headaches, permanently rejected, do not suggest
 
-## 5. UTILITY RATE STRUCTURE
-**Cancelled EV2-A (Residential Home Charging) under NEM 2.0** (switched 2026-08)
-* **Base Services Charge:** $24.60/month (0.79343/day). Target net bill: low 40s.
-* **Peak Window ($0.54/kWh):** 4:00 PM - 9:00 PM.
-* **Part Peak Window ($0.43/kWh):** 3:00-4:00 PM and 9:00 PM-12:00 AM.
-* **Off Peak Window ($0.23/kWh):** 12:00 AM - 3:00 PM.
+## 5. UTILITY RATE STRUCTURE (E-TOU-C, NEM 2.0)
+* **Plan:** E-TOU-C. EV2-A switch canceled Sep 2026 — do not switch (~$155/yr worse; base charge dominates).
+* **Base Services Charge:** $0.79343/day (~$23.80/month).
+* **Summer (Jun 1–Sep 30), below baseline:** Peak $0.40 / Off-peak $0.32. Peak window 4–9 PM daily.
+* **Winter (Oct 1–May 31), below baseline:** Peak $0.37 / Off-peak $0.29 (verify against tariff — PDF suggests 32¢ peak).
 
 ## 6. NETZERO APP AUTOMATION TIMELINE
 1. **Rule 1 - Morning Shift (9:00 AM):**
