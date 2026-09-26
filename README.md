@@ -13,7 +13,7 @@ Phase 1: Netzero scheduled automations. Phase 2: forecast-driven control via API
   - `tesla_client/` — Tesla Fleet API fallback
   - `dispatch/` — decision engine (15-min loop: read → decide → act on change)
   - `config/` — site config, rates, reserves
-- `deploy/raspberry-pi/` — trial deployment (Pi 400: dry-run first, then live)
+- `deploy/raspberry-pi/` — trial deployment (Pi 4b 8gb 1tb ssd: dry-run first, then live)
 - `deploy/digitalocean/` — production deployment (droplet: uptime)
 - `logger/` — telemetry capture spec (`LOGGER_SPEC.md`): 5-min CSV on the Pi + hourly Sheet rollup; v5.51 Apps Script sheet logger lives on until cutover
 - `analysis/` — one-off analysis scripts (rate comparisons etc.)
