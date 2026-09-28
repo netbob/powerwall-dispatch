@@ -34,3 +34,8 @@ Phase 1: Netzero scheduled automations. Phase 2: forecast-driven control via API
 - [ ] Whiteboard: dispatch strategy → `pseudocode/`
 - [ ] Pi trial build
 - [ ] Droplet cutover
+
+## Security
+Secrets (API tokens, account numbers, keys) never live in this repo — see
+`SECURITY.md` for the convention and the pre-commit guard. Enable the guard
+once per clone with `git config core.hooksPath hooks`.
