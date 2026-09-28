@@ -24,6 +24,14 @@ Open design surface for the programmatic dispatch layer. Entries are numbered in
 - Interaction with #5-winter: the storm trigger overrides the 10 kWh solar estimate.
 - Definition of "clear": all warnings expired, plus a grace period?
 
+**Repeatable drill (2026-09-27):** the Tier 4 configuration is exercised as a pair of Netzero automations, kept paused except during drills:
+- 4.1 "Test run", 5:00 AM: 100% reserve, Self-Powered, solar-only exports, grid charging enabled.
+- 4.2 "Test reset", 5:20 AM: 10% reserve, Self-Powered, solar-only exports, grid charging disabled — restores the standing #4 rule.
+- The 20-minute window sits at the overnight SoC low for maximum charge signal (~1.5 kWh, ~$0.50, ~0.1 EFC), well before sunrise so there's no solar confounding.
+- Pause both after the drill — they're daily automations.
+- Measurement: Tesla app live view for the immediate engagement check; the 5:15 logger row as a mid-test snapshot; the 5-minute CSV for ramp time, sustained rate, SoC delta, and clean stop at reset.
+- First drill: 2026-09-28. Results: _pending._
+
 ## 2. Adaptive overnight reserve (2026-09-26)
 
 **Status:** live as the standing rule since Sep 27 — #4's reserve is 10% every night, not just deficit nights. Validated by the Sep 26–27 run: 10% carried the house 10+ hours on a deficit day (15.3 kWh solar vs 18.8 kWh home), first grid sip at 7:15 AM. The 20% default was storm insurance charged on calm nights; entry #1's trigger is the better mechanism for that.
