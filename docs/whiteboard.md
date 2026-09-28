@@ -51,3 +51,7 @@ Open design surface for the programmatic dispatch layer. Entries are numbered in
 - Should the reserve scale with the evening SoC (e.g. start below 40% → still 10%, since the failure mode is benign)?
 - Forecast source for storm-risk detection (ties to entry #1).
 - Interaction with #5-winter: on low-solar winter days the midnight top-off already refills the battery, so the 10% standing rule matters most in shoulder seasons.
+
+## drill-results-2026-09-28
+
+** First drill: 2026-09-28. Result: no charging. Both automations fired and reported Success (4.1 at 5:00:22, 4.2 at 5:20:27), but the 5-minute CSV shows zero grid→Powerwall flow in every interval 00:00–06:25 — engagement never happened, delivered energy 0 Wh. Suspected cause: Self-Powered mode does not honor grid charging; #5-winter's Savings mode is the known-good path. Note: the battery hit the 10% reserve at ~4:37 AM, so grid was already covering the home before the window. Action: re-drill with 4.1 in Savings mode; then fix the Tier 4 runbook charge step to match.
