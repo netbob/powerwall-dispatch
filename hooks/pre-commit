@@ -1,0 +1,62 @@
+#!/usr/bin/env python3
+"""Pre-commit secret guard for powerwall-dispatch.
+
+Blocks commits whose staged additions look like secrets or identifiers
+(API tokens, keys, account-number-like digit runs).
+
+Enable once per clone, from the repo root:
+    git config core.hooksPath hooks
+
+Bypass (only when you're certain it's a false positive):
+    git commit --no-verify
+"""
+import re
+import subprocess
+import sys
+
+# (label, pattern) — identifier patterns only; never ordinary prose.
+PATTERNS = [
+    ("GitHub personal access token", r"ghp_[A-Za-z0-9]{20,}"),
+    ("GitHub fine-grained token", r"github_pat_[A-Za-z0-9_]{20,}"),
+    ("API-style key", r"sk-[A-Za-z0-9]{20,}"),
+    ("AWS access key", r"AKIA[0-9A-Z]{16}"),
+    ("long digit run (possible account number)", r"\b\d{10,13}\b"),
+    ("key/token assignment",
+     r"(?i)(api[_-]?key|access[_-]?token|secret[_-]?key|client[_-]?secret)"
+     r"\s*[:=]\s*['\"]?[A-Za-z0-9_\-./+]{16,}"),
+]
+COMPILED = [(label, re.compile(p)) for label, p in PATTERNS]
+
+
+def staged_additions():
+    """Yield (path, added_line) for every added line in the staging area."""
+    diff = subprocess.run(
+        ["git", "diff", "--cached", "-U0"],
+        capture_output=True, text=True, check=True).stdout
+    path = "<unknown>"
+    for raw in diff.splitlines():
+        if raw.startswith("+++ b/"):
+            path = raw[len("+++ b/"):]
+        elif raw.startswith("+") and not raw.startswith("+++"):
+            yield path, raw[1:]
+
+
+def main():
+    hits = []
+    for path, line in staged_additions():
+        for label, rx in COMPILED:
+            if rx.search(line):
+                hits.append((path, label, rx.sub("[REDACTED]", line.strip())[:160]))
+    if not hits:
+        return 0
+    print("pre-commit: BLOCKED — possible secrets in staged changes:\n")
+    for path, label, redacted in hits:
+        print(f"  {path}: {label}\n    {redacted}")
+    print("\nSecrets never go in this repo — keep them in Secure Vault "
+          "(see SECURITY.md).")
+    print("If this is a false positive: git commit --no-verify")
+    return 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())
