@@ -26,21 +26,20 @@ Open design surface for the programmatic dispatch layer. Entries are numbered in
 
 ## 2. Adaptive overnight reserve (2026-09-26)
 
-**Status:** raised during the Sep 26 evening watch — 43% SoC at 7:43 PM projected to land ~21% by morning, kissing #4's static 20% reserve after a deficit day (15.3 kWh solar vs 18.8 kWh home).
+**Status:** live as the standing rule since Sep 27 — #4's reserve is 10% every night, not just deficit nights. Validated by the Sep 26–27 run: 10% carried the house 10+ hours on a deficit day (15.3 kWh solar vs 18.8 kWh home), first grid sip at 7:15 AM. The 20% default was storm insurance charged on calm nights; entry #1's trigger is the better mechanism for that.
 
-**Problem:** #4's 20% reserve is one number for every night. On deficit days (clouds, haze, laundry) the house is forced onto grid imports before morning solar even though usable energy sits below 20%. On strong days the reserve is never threatened. A static reserve either wastes streaks or wastes resilience — it can't do both jobs.
+**Problem:** #4's 20% reserve was one number for every night. On deficit days (clouds, haze, laundry) the house was forced onto grid imports before morning solar even though usable energy sat below 20%. A static 20% paid storm insurance on calm nights.
 
-**Proposal:** set the overnight reserve conditionally:
-- Deficit day + clear tomorrow's forecast + no storm risk → 10% reserve. Usable energy grows ~1.35 kWh ≈ 5 extra baseline hours.
-- Any storm/PSPS risk → 20% or higher regardless of the day's balance (entry #1 overrides this entry).
-- Normal day → 20% stays.
+**Rule:**
+- Standing overnight reserve: 10%. Covers the measured overnight (~0.42 kW × 10 h ≈ 31% of 13.5 kWh) with margin on any night starting above ~45%; on deeper deficit nights the failure mode is a small off-peak sip, which is cheap and acceptable.
+- Storm/PSPS risk → raise per entry #1 (100% reserve + grid charging), which overrides this entry.
+- Never below 10%: keeps a floor for measurement error and surprise loads.
 
 **Invariants:**
 - The reserve gates grid-tied discharge depth, not outage discharge — in a real outage the battery gives everything regardless. The cost of 10% is thinner pre-outage positioning, not lost backup.
-- Never below 10%: keeps a floor for measurement error and surprise loads.
-- The manual version exists today: adjust #4's reserve in the Netzero app on deficit evenings. The automation is Phase 2.
+- Precedent: #3 already runs a 10% reserve through the 4–9 PM peak window daily, so the evening has operated at 10% all along.
 
 **Open design questions:**
-- Deficit definition: today's solar kWh vs home kWh? Net grid for the day? A threshold?
-- Forecast source for "clear tomorrow" (ties to the Phase 2 forecasting work).
-- Interaction with #5-winter: on low-solar winter days the midnight top-off already refills the battery, so adaptive reserve matters most in shoulder seasons.
+- Should the reserve scale with the evening SoC (e.g. start below 40% → still 10%, since the failure mode is benign)?
+- Forecast source for storm-risk detection (ties to entry #1).
+- Interaction with #5-winter: on low-solar winter days the midnight top-off already refills the battery, so the 10% standing rule matters most in shoulder seasons.
