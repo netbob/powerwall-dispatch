@@ -32,10 +32,10 @@
 * **Winter (Oct 1–May 31), below baseline:** Peak $0.37 / Off-peak $0.29 (verify against tariff — PDF suggests 32¢ peak).
 
 ## 5. NETZERO AUTOMATION INVENTORY (reworked 2026-09-24)
-* **#1 Morning Shift (9 AM, active):** 20% reserve, Self-Powered, solar-only exports, grid charging off.
+* **#1 Morning Shift (9 AM, active):** 10% reserve, Self-Powered, solar-only exports, grid charging off.
 * **#2 Mid-peak Guard (3 PM, paused → unpause Oct 1):** 100% reserve, Self-Powered, solar-only, grid charging off.
 * **#3 Peak Self-Power (4 PM, active):** 10% reserve, Self-Powered, solar-only, grid charging off. (Export burst retired.)
-* **#4 Overnight Run (9 PM, active):** 20% reserve, Self-Powered, solar-only, grid charging off.
+* **#4 Overnight Run (9 PM, active):** 10% reserve, Self-Powered, solar-only, grid charging off.
 * **#5 Winter Grid Top-Off (midnight, paused → unpause Oct 1):** 100% reserve, Savings, grid charging on when est. daily solar < 10 kWh.
 * **#6 Winter Reset (6 AM, paused → unpause Oct 1):** 40% reserve, Savings, solar-only, grid charging off when est. daily solar < 10 kWh.
 * **Strategy:** avoid grid imports; no export monetization (retired — nets ~$0 under NEM 2.0, adds cycle wear).
@@ -48,3 +48,5 @@
 * **Phase 2:** 5-min CSV on the Pi (schema: logger/LOGGER_SPEC.md) + hourly Sheet rollup.
 * **Sheet Formatting Rule:** Do not use manual ARRAYFORMULA in F3/G3 - collides with script's row-by-row insertions, causes #REF! crash
 * **Verification Metric:** Column G (Net Grid Flow) strictly negative or zero during afternoon confirms export under NEM 2.0
+
+
