@@ -39,13 +39,14 @@ Notes:
 - Grid charging here is defensive resilience, not arbitrage. Cost is irrelevant in Tier 4.
 - The thermostat is never automated — comfort rules still apply.
 - If the outage hits mid-charge, whatever is in the battery is what you have.
+- Drill-verified 2026-09-29: Netzero's grid-charging flag flips the Tesla toggle end-to-end; Energy Exports stays Solar throughout. Observed charge rate ~1.5 kW → 10%→100% takes ~8 hours, so start the charge the moment a trigger fires.
 
 ## Pre-Oct 1 checklist
 
 - [ ] Unpause #2, #5-winter, #6 (reminder set: Sep 30, ~9:10 PM)
 - [ ] Keep #5-summer paused; old #3 export burst stays retired
 - [ ] Verify winter peak rate: 37¢ vs 32¢ against tariff or bill
-- [ ] Dry-run the Tier 4 procedure once before it's needed
+- [x] Dry-run the Tier 4 procedure once before it's needed
 - [ ] Confirm PG&E outage/PSPS notifications are on (text + email)
 
 ## Open questions
