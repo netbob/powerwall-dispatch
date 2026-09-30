@@ -33,7 +33,7 @@ truth and the sole Muse↔VS collaboration bridge. Phase 2 dispatch scaffold exi
 (`src/` 15-min loop design, `config/`, `deploy/raspberry-pi/` + `deploy/digitalocean/`,
 `logger/LOGGER_SPEC.md`); no controller built yet. Pi 4 is the dry-run host;
 DigitalOcean droplet is for the proven build. Custom Python controller judged
-feasible (Sep 29): Netzero REST API as actuator (account grandfathered, free),
+feasible (Sep 29): Netzero REST API as actuator (account may be grandfathered  verify actual entitlement),
 NWS via api.weather.gov (free), solar forecast via Open-Meteo (free). Home
 Assistant is optional, not required.
 
