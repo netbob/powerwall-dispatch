@@ -128,7 +128,7 @@ class Handler(BaseHTTPRequestHandler):
 def main():
     if not TOKEN or not SITE_ID:
         raise SystemExit('Set NETZERO_API_TOKEN and NETZERO_SITE_ID in Windows User environment variables first.')
-    threading.Thread(target=poller,daemon=True).start();server=HTTPServer(('0.0.0.0',PORT),Handler)
+    threading.Thread(target=poller,daemon=True).start();server=HTTPServer(('127.0.0.1',PORT),Handler)
     print(f'Powerwall dashboard with safe controls: http://localhost:{PORT}')
     print(f'Netzero polling every {POLL_SECONDS}s. Press Ctrl+C to stop.')
     try:
