@@ -26,6 +26,63 @@ other side needs to know. Keep entries short. Current state first, log below.
 - Netzero "Success" means the API calls returned clean, NOT that the Powerwall
   acted. The CSV is the authority on what physically happened.
 
+## 2026-10-07 — Catch-up entry (drafted by chat-Muse, filed by Michael)
+
+### Current state
+Winter lineup validated Oct 1–7; the verdict every day was no changes.
+#2 banks the battery before the 4 PM peak, peak imports ~zero across the
+stretch, #5-winter and #6 correctly silent — the est. solar <10 kWh
+condition has not occurred (actuals 14.2–15.3 kWh daily). Nightly ledgers
+live in chat-Muse's records, not here.
+
+Heat advisory in effect through Fri Oct 9 (highs ~100/98/95°F). A/C off at
+10 PM on extreme-heat nights. Upstairs 77°F daytime, downstairs OFF,
+thermostat manual-only.
+
+### Closed since the Sep 30 entry
+- Winter switchover done Sep 30 ~6:35 PM: #2, #5-winter, #6 resumed.
+  Oct 1 was the first validated winter cycle.
+- Muse Code: installed on the Dell (v1.4.1); auth via $env:META_API_KEY
+  plus a payment method on file. Push path PROVEN — sessions edit and
+  commit, Michael pushes (reads need -c http.sslBackend=openssl).
+  Installer quirk: the launcher template was patched at line 107
+  ($powershell_exe -> pwsh) after the first install died on Get-FileHash
+  under Windows PowerShell 5.1; re-check after any reinstall or upgrade.
+  The installer adds its folder to the user PATH itself.
+- Dashboard: dark mode + README landed via a session; commit 6a37f09
+  pushed and verified Sep 30.
+- Noon string check CLOSED Oct 5: String 1 (west) 265 V / 6.6 A / 1,749 W;
+  String 2 (east) 100 V / 3.9 A / 390 W. "Disabled" was darkness.
+- CSV protocol settled (Sep 30) and restated: NO CSV is owed. The morning
+  5-min CSV activates only after the first true #5-winter firing.
+- AGENTS.md adopted Oct 7 in all three repos (this repo, netbob.org,
+  mjmcshane.com) and verified live here: rules load at session open, and
+  a bridge instruction to push was held against the never-push standing
+  rule. Standing rules outrank entries in this file.
+
+### Still open
+- #5-winter first firing (has never fired). On firing: morning-CSV
+  protocol. Fog-day dispatch review set for Oct 30 — build no fog
+  variants before then.
+- October PG&E bill settles the provisional winter rates (37c peak / 29c
+  off-peak, currently in the logger and Netzero). Watch for the fall
+  California Climate Credit on it.
+- Green Button download (Feb 1, 2026 -> latest): owner's action, pending.
+- Storm Watch: does it independently initiate grid charging? Tesla's
+  published framing suggests grid charging is a prerequisite for Storm
+  Watch, not an override. Verdict waits on the Tesla app states.
+- Logger: Historical_Logs gap ~Sep 28–30 suspected (Sheet1 is complete;
+  owner watching). "dischargating" typo and the pre-v5.52 restatement
+  decision: low priority, deliberately unbundled.
+- Working Copy reclone / pre-commit hook enablement per clone:
+  status unconfirmed.
+
+### Note for sessions
+The 5% peak-tail move (used Oct 5 and Oct 7 — reserve lowered manually
+for the last stretch of peak when the battery floors early) is an
+experiment, not policy. The overnight reserve floor stays 10%.
+
+
 ## Current state (2026-09-30)
 
 **Repo / Phase 2:** `github.com/netbob/powerwall-dispatch` (public) is the source of
